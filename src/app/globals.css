@@ -1,26 +1,58 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Nama variabel di sini harus sesuai dengan --font-open-sans di layout.tsx */
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-serif);
+  --color-primary: #e11d48;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Tailwind v4: Variant dark manual. 
+   Ini memastikan class .dark di tag <html> diakui oleh utilitas dark: 
+*/
+@variant dark (&:where(.dark, .dark *));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
+    /* Spesifikasi mutlak dari hasil Inspect Element */
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4a4a4a;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* Transisi hanya pada background dan text untuk performa maksimal */
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    @apply bg-[#FCFCFC] text-[#1A1A1A] dark:bg-[#0F1115] dark:text-[#E2E8F0];
+  }
+
+  /* Targetkan elemen prose secara spesifik agar tidak kedip */
+  .prose {
+    transition: color 0.3s ease;
   }
 }
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar adaptif menggunakan variabel CSS agar aman dari build error */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #374151;
 }
