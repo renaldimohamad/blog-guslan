@@ -16,7 +16,7 @@ export default function PostCard({ title, date, excerpt, slug }: any) {
         aria-label={title}
       />
 
-      <h3 className="font-serif text-[1.25rem] md:text-[1.5rem] leading-tight text-gray-900 dark:text-white transition-colors duration-500 antialiased group-hover:text-primary">
+      <h3 className="text-[1.25rem] md:text-[1.5rem] leading-tight text-gray-900 dark:text-white transition-colors duration-500 antialiased group-hover:text-primary">
         {title}
       </h3>
 
@@ -27,7 +27,7 @@ export default function PostCard({ title, date, excerpt, slug }: any) {
         <span className="text-gray-400 dark:text-gray-500">{date}</span>
       </div>
 
-      <p className="font-serif text-gray-600 dark:text-gray-400 text-[0.95rem] md:text-[1.05rem] leading-relaxed line-clamp-3">
+      <p className="text-gray-600 dark:text-gray-400 text-[0.95rem] md:text-[1.05rem] leading-relaxed line-clamp-3">
         {excerpt}
       </p>
     </motion.div>
