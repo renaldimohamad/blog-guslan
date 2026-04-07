@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <div className="py-10">
       <header className="mb-10">
-        <h2 className="text-4xl font-bold mb-4 dark:text-white">Blog</h2>
+        <h2 className="text-4xl font-bold mb-4 dark:text-white">Ceritaku</h2>
 
         <div className="h-1.5 w-12 bg-primary rounded-full"></div>
       </header>

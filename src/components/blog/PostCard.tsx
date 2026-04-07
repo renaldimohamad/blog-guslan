@@ -22,7 +22,7 @@ export default function PostCard({ title, date, excerpt, slug }: any) {
 
       <div className="flex items-center gap-3 text-[11px] md:text-xs font-sans font-bold uppercase tracking-widest">
         <span className="text-primary bg-primary/10 px-2 py-0.5 rounded">
-          Blog
+          Ceritaku
         </span>
         <span className="text-gray-400 dark:text-gray-500">{date}</span>
       </div>
