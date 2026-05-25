@@ -56,7 +56,7 @@ export default async function ManagePostsPage() {
             </p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-950/20 text-xs font-bold uppercase tracking-wider text-gray-400">
@@ -112,8 +112,8 @@ export default async function ManagePostsPage() {
                     <td className="py-4 px-6 text-center">
                       <span
                         className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${post.published
-                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400"
-                            : "bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400"
+                          ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400"
+                          : "bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400"
                           }`}
                       >
                         <span
