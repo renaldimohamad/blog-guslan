@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next"; // Tambahkan import type Metadata
+import { Toaster } from "sonner";
 
 export const openSans = Open_Sans({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <Toaster position="top-right" richColors />
         </ThemeProvider>
       </body>
     </html>
