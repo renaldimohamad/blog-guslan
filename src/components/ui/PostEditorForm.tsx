@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useTransition, useEffect, useRef } from "react";
+import { useState, useTransition, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { createPost, updatePost } from "@/app/actions/post";
 import { calculateReadTime } from "@/lib/blogUtils";
 import { toast } from "sonner";
-import { ArrowLeft, Save, Eye, EyeOff, Sparkles, Bold, Italic, List } from "lucide-react";
+import { ArrowLeft, EyeOff, Sparkles, Bold, Italic, List } from "lucide-react";
 import Link from "next/link";
 
 interface PostData {
@@ -25,7 +25,6 @@ export default function PostEditorForm({ initialData }: PostEditorFormProps) {
   const [title, setTitle] = useState(initialData?.title || "");
   const [content, setContent] = useState(initialData?.content || "");
   const [excerpt, setExcerpt] = useState(initialData?.excerpt || "");
-  const [coverImage, setCoverImage] = useState(initialData?.coverImage || "");
   const [published, setPublished] = useState(initialData?.published || false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -84,7 +83,6 @@ export default function PostEditorForm({ initialData }: PostEditorFormProps) {
           title,
           content,
           excerpt: excerpt.trim() || undefined,
-          coverImage: coverImage.trim() || undefined,
           published: finalPublished,
         };
 

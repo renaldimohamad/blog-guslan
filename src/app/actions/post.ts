@@ -2,10 +2,9 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
-import { pusherServer, hasPusherCredentials } from "@/lib/pusher";
 import slugify from "slugify";
 import { revalidatePath } from "next/cache";
-import { calculateReadTime, generateExcerpt } from "@/lib/blogUtils";
+import { generateExcerpt } from "@/lib/blogUtils";
 
 // Generate unique slug
 async function generateUniqueSlug(title: string, postId?: string): Promise<string> {
